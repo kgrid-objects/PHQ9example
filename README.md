@@ -9,5 +9,9 @@ https://github.com/kgrid/kgrid-activator/releases/tag/kgrid-activator-1.7.0
 
 Download Kgrid Activator 1.7.0
 
-Run Kgrid Activator using this command:
+Create NEW folder
+
+Put Kgrid Activator 1.7.0 and the shelf folder in this repo in the NEW folder
+
+From the command line, with Java installed, run Kgrid Activator using this command:
 java -jar kgrid-activator-1.7.0.jar
