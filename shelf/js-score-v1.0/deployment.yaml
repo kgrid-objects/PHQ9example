@@ -1,0 +1,5 @@
+/score:
+  post:
+    artifact: src/index.js
+    engine: javascript
+    function: score

@@ -1,0 +1,13 @@
+{
+  "@id": "js/score/v1.0",
+  "@type":"koio:KnowledgeObject",
+  "identifier": "ark:/js/score/v1.0",
+  "version":"v1.0",
+  "title": "PHQ9 Score Interpreter",
+  "description":"Interprets a Total PHQ9 Survey Score",
+  "keywords":["PHQ9","depression"],
+  "hasServiceSpecification": "service.yaml",
+  "hasDeploymentSpecification": "deployment.yaml",
+  "hasPayload": "src/index.js",
+  "@context" : ["http://kgrid.org/koio/contexts/knowledgeobject.jsonld" ]
+}

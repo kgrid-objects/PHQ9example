@@ -1,0 +1,62 @@
+openapi: 3.0.2
+info:
+  version: '1.0'
+  title: 'PHQ9 Score Interpreter'
+  description: Give a PHQ9 score, get an interpretation of it.
+  license:
+    name: GNU General Public License v3 (GPL-3)
+    url: >-
+      https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)#fulltext
+  contact:
+    name: KGrid Team
+    email: kgrid-developers@umich.edu
+    url: 'http://kgrid.org'
+servers:
+  - url: /js/score
+    description: PHQ9 Score Interpreter
+tags:
+  - name: KO Endpoints
+    description: PHQ9 Score Interpreter Endpoints
+paths:
+  /score:
+    post:
+      parameters:
+        - $ref: 'https://demo.kgrid.org/schemas/openapischemas.yaml#/components/parameters/apiversion'
+      tags:
+        - KO Endpoints
+      description: Score.
+      operationId: score
+      requestBody:
+        description: inputs
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/input'
+      responses:
+        '200':
+          description: response
+          content:
+            application/json:
+              schema:
+                $ref: 'https://demo.kgrid.org/schemas/openapischemas.yaml#/components/schemas/genericresponse'
+            application/json;profile="minimal":
+              schema:
+                type: string
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: 'https://demo.kgrid.org/schemas/openapischemas.yaml#/components/schemas/genericerror'
+components:
+  schemas:
+    input:
+      required:
+        - score
+      properties:
+        score:
+          type: integer
+          x-kgrid-label: 'Please enter a total PHQ9 score'
+          x-kgrid-unit: ''
+          example: 24
